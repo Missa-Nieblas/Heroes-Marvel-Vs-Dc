@@ -1,7 +1,6 @@
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import {LoginPages} from "../auth"
-import {DcPage, MarvelPage} from "../heroes"
-import { Navbar } from "../ui"
+import {HeroesRoutes} from "../heroes"
 
 
 export const AppRouter = () => {
@@ -9,15 +8,10 @@ export const AppRouter = () => {
   
     return (
         <>
-
-            <Navbar />
             <Routes>
-                <Route path="marvel" element = {<MarvelPage/>} />
-                <Route path="dc" element = {<DcPage />}/>
-
                 <Route path="login" element = {<LoginPages />}/>
-
-                <Route path="/" element = {<Navigate to="/marvel" />}/>
+                <Route path="/*" element = {<HeroesRoutes />}/>
+                
             </Routes>
 
         </>
